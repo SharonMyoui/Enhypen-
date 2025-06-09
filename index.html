@@ -1,164 +1,288 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ENHYPEN – Wiki y Discografía</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
-
-    body {
-      font-family: 'Quicksand', sans-serif;
-      margin: 0;
-      background-color: #f4f6fa;
-      color: #333;
-    }
-
-    .sidebar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 220px;
-      height: 100%;
-      background-color: #e6e9f5;
-      padding: 20px;
-      overflow-y: auto;
-      box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-    }
-
-    .sidebar h2 {
-      font-size: 1.4em;
-      color: #4c51bf;
-      margin-bottom: 20px;
-    }
-
-    .sidebar a {
-      display: block;
-      margin: 10px 0;
-      color: #2c3e50;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .sidebar a:hover {
-      color: #5a67d8;
-    }
-
-    .main-content {
-      margin-left: 240px;
-      padding: 30px;
-    }
-
-    section {
-      margin-bottom: 50px;
-    }
-
-    h1, h2 {
-      color: #5a67d8;
-    }
-
-    .miembro {
-      margin: 20px 0;
-    }
-
-    .miembro a {
-      font-weight: bold;
-      color: #5a67d8;
-      text-decoration: none;
-    }
-
-    .miembro a:hover {
-      text-decoration: underline;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ENHYPEN - Perfil Completo</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
+  body {
+    margin: 0; padding: 20px;
+    font-family: 'Quicksand', sans-serif;
+    background: #f0f4ff;
+    color: #222;
+    line-height: 1.5;
+  }
+  h1,h2 {
+    color: #4a51bf;
+  }
+  header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  nav#indice {
+    position: fixed;
+    top: 80px;
+    left: 20px;
+    background: #d4dbffcc;
+    padding: 10px 15px;
+    border-radius: 12px;
+    max-width: 180px;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+  nav#indice a {
+    display: block;
+    margin-bottom: 8px;
+    text-decoration: none;
+    color: #334;
+    border-left: 3px solid transparent;
+    padding-left: 6px;
+    transition: border-color 0.3s;
+  }
+  nav#indice a:hover,
+  nav#indice a:focus {
+    border-left-color: #4a51bf;
+    color: #2a2f90;
+    outline: none;
+  }
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding-left: 220px; /* dejar espacio para índice */
+  }
+  section {
+    margin-bottom: 50px;
+  }
+  .miembro {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+  }
+  .miembro img {
+    width: 140px;
+    border-radius: 14px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgb(0 0 0 / 0.1);
+    transition: transform 0.3s ease;
+  }
+  .miembro img:hover {
+    transform: scale(1.07);
+  }
+  .miembro-info a {
+    color: #3a3ea6;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .miembro-info a:hover,
+  .miembro-info a:focus {
+    text-decoration: underline;
+    outline: none;
+  }
+  ul.album-list,
+  ul.mini-albums,
+  ul.canciones {
+    padding-left: 20px;
+  }
+  ul.album-list li,
+  ul.mini-albums li,
+  ul.canciones li {
+    margin-bottom: 8px;
+  }
+  ul.canciones li a {
+    color: #3a3ea6;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  ul.canciones li a:hover,
+  ul.canciones li a:focus {
+    text-decoration: underline;
+    outline: none;
+  }
+  button#topBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #4a51bf;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 50px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgb(74 81 191 / 0.6);
+    transition: background 0.3s ease;
+  }
+  button#topBtn:hover,
+  button#topBtn:focus {
+    background: #2a2f90;
+    outline: none;
+  }
+</style>
 </head>
 <body>
 
-<div class="sidebar">
-  <h2>Índice</h2>
-  <a href="#historia">Historia</a>
-  <a href="#integrantes">Miembros</a>
-  <a href="#cumples">Cumpleaños</a>
-  <a href="#albums">Álbumes</a>
-  <a href="#mini">Mini Álbumes</a>
-  <a href="#recom">Canciones Recomendadas</a>
-  <a href="#engene">ENGENE</a>
-</div>
+<header>
+  <h1>ENHYPEN ✨</h1>
+  <p>Perfil Completo: miembros, álbumes, canciones y más</p>
+</header>
 
-<div class="main-content">
-  <section id="historia">
-    <h1>ENHYPEN</h1>
-    <p>ENHYPEN es un grupo surcoreano formado en 2020 a través del programa de supervivencia <strong>I-LAND</strong> producido por HYBE y CJ ENM. Durante el programa, los concursantes compitieron por un lugar en el grupo final. <strong>Heeseung</strong>, <strong>Jay</strong>, <strong>Jake</strong>, <strong>Sunghoon</strong>, <strong>Sunoo</strong>, <strong>Jungwon</strong> (líder), y <strong>Ni-ki</strong> fueron los finalistas seleccionados. Algunos favoritos como <em>K</em> y <em>Daniel</em> fueron eliminados inesperadamente.</p>
-    <p>Debutaron el 30 de noviembre de 2020 con el mini álbum <strong>"BORDER: DAY ONE"</strong>. Desde entonces, han ganado popularidad global y múltiples premios.</p>
+<nav id="indice" aria-label="Índice de contenidos">
+  <strong>Índice</strong>
+  <a href="#debut">📅 Debut</a>
+  <a href="#miembros">👥 Miembros</a>
+  <a href="#cumpleanos">🎂 Cumpleaños</a>
+  <a href="#albumes">💿 Álbumes</a>
+  <a href="#minialbumes">🎵 Mini Álbumes</a>
+  <a href="#canciones">🎧 Canciones Recomendadas</a>
+  <a href="#engene">💖 Aniversario ENGENE</a>
+  <a href="#wikipedia">📚 Wikipedia ENHYPEN</a>
+</nav>
+
+<main>
+  <section id="debut" tabindex="0">
+    <h2>📅 Fecha de debut</h2>
+    <p>ENHYPEN debutó oficialmente el <strong>30 de noviembre de 2020</strong> con el álbum <em>"BORDER: DAY ONE"</em>, tras el programa survival <em>I-LAND</em> producido por Belift Lab (HYBE).</p>
   </section>
 
-  <section id="integrantes">
-    <h2>Miembros</h2>
-    <div class="miembro"><a href="https://pin.it/3PpXx7F">Heeseung</a> – Vocalista, bailarín, centro</div>
-    <div class="miembro"><a href="https://pin.it/6uYAxEP">Jay</a> – Rapero, bailarín</div>
-    <div class="miembro"><a href="https://pin.it/1pEzyxN">Jake</a> – Vocalista, rapero</div>
-    <div class="miembro"><a href="https://pin.it/5kUPFaa">Sunghoon</a> – Visual, vocalista</div>
-    <div class="miembro"><a href="https://pin.it/4p4KsGU">Sunoo</a> – Vocalista, energía del grupo</div>
-    <div class="miembro"><a href="https://pin.it/3iG6whg">Jungwon</a> – Líder, bailarín</div>
-    <div class="miembro"><a href="https://pin.it/1eqRk2m">Ni-ki</a> – Maknae, bailarín principal</div>
+  <section id="miembros" tabindex="0">
+    <h2>👥 Miembros de ENHYPEN</h2>
+
+    <div class="miembro">
+      <img src="https://i.pinimg.com/564x/3b/5e/3a/3b5e3a18c066e3f8a7f4bc17f74e6d64.jpg" alt="Foto de Jungwon" title="Abrir foto de Jungwon en Pinterest" onclick="window.open('https://www.pinterest.com/pin/704875952253513220/', '_blank')" />
+      <div class="miembro-info">
+        <strong><a href="https://www.pinterest.com/pin/704875952253513220/" target="_blank" rel="noopener noreferrer">Jungwon</a></strong><br />
+        Posición: Líder, bailarín, vocalista<br />
+        Nacionalidad: Coreano
+      </div>
+    </div>
+
+    <div class="miembro">
+      <img src="https://i.pinimg.com/564x/14/ae/7d/14ae7dd5ec204ce72101c9e4b8d136f3.jpg" alt="Foto de Ni-ki" title="Abrir foto de Ni-ki en Pinterest" onclick="window.open('https://www.pinterest.com/pin/721340287410234755/', '_blank')" />
+      <div class="miembro-info">
+        <strong><a href="https://www.pinterest.com/pin/721340287410234755/" target="_blank" rel="noopener noreferrer">Ni-ki</a></strong><br />
+        Posición: Bailarín principal<br />
+        Nacionalidad: Japonés
+      </div>
+    </div>
+
+    <div class="miembro">
+      <img src="https://i.pinimg.com/564x/d4/c5/f7/d4c5f7f7cbf729416b9a763e3dbd39d6.jpg" alt="Foto de Heeseung" title="Abrir foto de Heeseung en Pinterest" onclick="window.open('https://www.pinterest.com/pin/709360812798645296/', '_blank')" />
+      <div class="miembro-info">
+        <strong><a href="https://www.pinterest.com/pin/709360812798645296/" target="_blank" rel="noopener noreferrer">Heeseung</a></strong><br />
+        Posición: Vocalista principal, bailarín, centro<br />
+        Nacionalidad: Coreano
+      </div>
+    </div>
+
+    <div class="miembro">
+      <img src="https://i.pinimg.com/564x/58/8f/01/588f01c24b2463c81e3525177a7f9589.jpg" alt="Foto de Jay" title="Abrir foto de Jay en Pinterest" onclick="window.open('https://www.pinterest.com/pin/535004231090326666/', '_blank')" />
+      <div class="miembro-info">
+        <strong><a href="https://www.pinterest.com/pin/535004231090326666/" target="_blank" rel="noopener noreferrer">Jay</a></strong><br />
+        Posición: Rapero, bailarín<br />
+        Nacionalidad: Coreano-americano
+      </div>
+    </div>
+
+    <div class="miembro">
+      <img src="https://i.pinimg.com/564x/38/c2/0e/38c20ed31710cb2c6822339307fa0c70.jpg" alt="Foto de Jake" title="Abrir foto de Jake en Pinterest" onclick="window.open('https://www.pinterest.com/pin/712077374931381814/', '_blank')" />
+      <div class="miembro-info">
+        <strong><a href="https://www.pinterest.com/pin/712077374931381814/" target="_blank" rel="noopener noreferrer">Jake</a></strong><br />
+        Posición: Vocalista, rapero<br />
+        Nacionalidad: Coreano-australiano
+      </div>
+    </div>
+
+    <div class="miembro">
+      <img src="https://i.pinimg.com/564x/d6/3d/9a/d63d9afba0fc3c9a1c1176463cced1b4.jpg" alt="Foto de Sunghoon" title="Abrir foto de Sunghoon en Pinterest" onclick="window.open('https://www.pinterest.com/pin/723731380063471930/', '_blank')" />
+      <div class="miembro-info">
+        <strong><a href="https://www.pinterest.com/pin/723731380063471930/" target="_blank" rel="noopener noreferrer">Sunghoon</a></strong><br />
+        Posición: Visual, vocalista<br />
+        Ex patinador artístico profesional
+      </div>
+    </div>
+
+    <div class="miembro">
+      <img src="https://i.pinimg.com/564x/60/f0/95/60f0954f30a2f80c4fd634a16a3eec5a.jpg" alt="Foto de Sunoo" title="Abrir foto de Sunoo en Pinterest" onclick="window.open('https://www.pinterest.com/pin/747131432844294220/', '_blank')" />
+      <div class="miembro-info">
+        <strong><a href="https://www.pinterest.com/pin/747131432844294220/" target="_blank" rel="noopener noreferrer">Sunoo</a></strong><br />
+        Posición: Vocalista, energía del grupo<br />
+        Carismático y expresivo
+      </div>
+    </div>
   </section>
 
-  <section id="cumples">
-    <h2>Cumpleaños</h2>
+  <section id="cumpleanos" tabindex="0">
+    <h2>🎂 Cumpleaños</h2>
     <ul>
-      <li>Heeseung: 15 de octubre de 2001</li>
-      <li>Jay: 20 de abril de 2002</li>
-      <li>Jake: 15 de noviembre de 2002</li>
-      <li>Sunghoon: 8 de diciembre de 2002</li>
-      <li>Sunoo: 24 de junio de 2003</li>
-      <li>Jungwon: 9 de febrero de 2004</li>
-      <li>Ni-ki: 9 de diciembre de 2005</li>
+      <li><strong>Heeseung:</strong> 15 de octubre de 2001</li>
+      <li><strong>Jay:</strong> 20 de abril de 2002</li>
+      <li><strong>Jake:</strong> 15 de noviembre de 2002</li>
+      <li><strong>Sunghoon:</strong> 8 de diciembre de 2002</li>
+      <li><strong>Sunoo:</strong> 24 de junio de 2003</li>
+      <li><strong>Jungwon:</strong> 9 de febrero de 2004</li>
+      <li><strong>Ni-ki:</strong> 9 de diciembre de 2005</li>
     </ul>
   </section>
 
-  <section id="albums">
-    <h2>Álbumes</h2>
-    <ul>
-      <li><a href="https://www.youtube.com/watch?v=Ap5Vd8D54a4">BORDER: DAY ONE</a> (2020)</li>
-      <li><a href="https://www.youtube.com/watch?v=7gzZEtiusO4">BORDER: CARNIVAL</a> (2021)</li>
-      <li><a href="https://www.youtube.com/watch?v=2hcM5hqQ45s">DIMENSION: DILEMMA</a> (2021)</li>
-      <li><a href="https://www.youtube.com/watch?v=_wCHmH2GsZQ">DIMENSION: ANSWER</a> (2022)</li>
-      <li><a href="https://www.youtube.com/watch?v=0H7N9kTxp3I">MANIFESTO: DAY 1</a> (2022)</li>
-      <li><a href="https://www.youtube.com/watch?v=tG3aJQ8jZTo">DARK BLOOD</a> (2023)</li>
-      <li><a href="https://www.youtube.com/watch?v=nhy6fIuPIFM">ORANGE BLOOD</a> (2023)</li>
+  <section id="albumes" tabindex="0">
+    <h2>💿 Álbumes</h2>
+    <ul class="album-list">
+      <li><strong>BORDER: DAY ONE</strong> (2020) - <a href="https://www.youtube.com/playlist?list=PLcwIdm-vCzLnDEagkXsk5ghy91j7cHgyZ" target="_blank" rel="noopener noreferrer">Escuchar en YouTube</a></li>
+      <li><strong>BORDER: CARNIVAL</strong> (2021) - <a href="https://www.youtube.com/playlist?list=PLcwIdm-vCzLl8m-lhF74ALwUnCZIemS2B" target="_blank" rel="noopener noreferrer">Escuchar en YouTube</a></li>
+      <li><strong>DIMENSION: DILEMMA</strong> (2021) - <a href="https://www.youtube.com/playlist?list=PLcwIdm-vCzLkqSuZQxv-EzSYvGHu_7Zlu" target="_blank" rel="noopener noreferrer">Escuchar en YouTube</a></li>
+      <li><strong>DIMENSION: ANSWER</strong> (2022) - <a href="https://www.youtube.com/playlist?list=PLcwIdm-vCzLlYjFE0MCgKEuBT1Q6kPPv6" target="_blank" rel="noopener noreferrer">Escuchar en YouTube</a></li>
+      <li><strong>MANIFESTO: DAY 1</strong> (2022) - <a href="https://www.youtube.com/playlist?list=PLcwIdm-vCzLmsjbdjc0PQamLlqJ3yi3-E" target="_blank" rel="noopener noreferrer">Escuchar en YouTube</a></li>
     </ul>
   </section>
 
-  <section id="mini">
-    <h2>Mini Álbumes</h2>
-    <ul>
-      <li><a href="https://www.youtube.com/watch?v=Ap5Vd8D54a4">BORDER: DAY ONE</a></li>
-      <li><a href="https://www.youtube.com/watch?v=7gzZEtiusO4">BORDER: CARNIVAL</a></li>
-      <li><a href="https://www.youtube.com/watch?v=tG3aJQ8jZTo">DARK BLOOD</a></li>
+  <section id="minialbumes" tabindex="0">
+    <h2>🎵 Mini Álbumes</h2>
+    <ul class="mini-albums">
+      <li><strong>BORDER: DAY ONE</strong> (2020) - <a href="https://www.youtube.com/playlist?list=PLcwIdm-vCzLnDEagkXsk5ghy91j7cHgyZ" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+      <li><strong>BORDER: CARNIVAL</strong> (2021) - <a href="https://www.youtube.com/playlist?list=PLcwIdm-vCzLl8m-lhF74ALwUnCZIemS2B" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+      <li><strong>DIMENSION: DILEMMA</strong> (2021) - <a href="https://www.youtube.com/playlist?list=PLcwIdm-vCzLkqSuZQxv-EzSYvGHu_7Zlu" target="_blank" rel="noopener noreferrer">YouTube</a></li>
     </ul>
   </section>
 
-  <section id="recom">
-    <h2>Canciones que te recomiendo</h2>
-    <ul>
-      <li><a href="https://www.youtube.com/watch?v=Ap5Vd8D54a4">Given-Taken</a></li>
-      <li><a href="https://www.youtube.com/watch?v=7gzZEtiusO4">Drunk-Dazed</a></li>
-      <li><a href="https://www.youtube.com/watch?v=_wCHmH2GsZQ">Blessed-Cursed</a></li>
-      <li><a href="https://www.youtube.com/watch?v=0H7N9kTxp3I">Future Perfect (Pass the MIC)</a></li>
-      <li><a href="https://www.youtube.com/watch?v=tG3aJQ8jZTo">Bite Me</a></li>
-      <li><a href="https://www.youtube.com/watch?v=nhy6fIuPIFM">Sweet Venom</a></li>
+  <section id="canciones" tabindex="0">
+    <h2>🎧 Canciones que te recomiendo escuchar</h2>
+    <ul class="canciones">
+      <li><a href="https://www.youtube.com/watch?v=U2vY4JjA_E8" target="_blank" rel="noopener noreferrer">Drunk-Dazed</a> — Un tema con energía intensa y potente para sentir el poder de ENHYPEN.</li>
+      <li><a href="https://www.youtube.com/watch?v=E47zMb0jB2k" target="_blank" rel="noopener noreferrer">Fever</a> — Una canción sensual y pegajosa, ideal para relajarte.</li>
+      <li><a href="https://www.youtube.com/watch?v=oT57A_96eXI" target="_blank" rel="noopener noreferrer">Tamed-Dashed</a> — Mezcla de rap y vocales muy dinámica y poderosa.</li>
+      <li><a href="https://www.youtube.com/watch?v=CUc1KcUDJk4" target="_blank" rel="noopener noreferrer">Given-Taken</a> — Canción debut que marcó su estilo, con letras profundas.</li>
+      <li><a href="https://www.youtube.com/watch?v=mYoc_7lElG8" target="_blank" rel="noopener noreferrer">Polaroid Love</a> — Dulce y melódica, perfecta para fans de baladas K-pop.</li>
     </ul>
   </section>
 
-  <section id="engene">
-    <h2>ENGENE</h2>
-    <p>El nombre del fandom "ENGENE" fue anunciado el 8 de octubre de 2020. Representa el vínculo entre ENHYPEN y sus fans, quienes son considerados el motor (engine) que los impulsa. ¡Feliz aniversario a todos los ENGENE cada año en esa fecha!</p>
+  <section id="engene" tabindex="0">
+    <h2>💖 Aniversario ENGENE</h2>
+    <p>El fanclub oficial de ENHYPEN se llama <strong>ENGENE</strong>. Su nombre combina “ENHYPEN” con “Engine”, simbolizando que los fans son el motor que impulsa al grupo.</p>
+    <p>Su aniversario se celebra el <strong>30 de noviembre</strong>, coincidiendo con el debut del grupo.</p>
   </section>
-</div>
+
+  <section id="wikipedia" tabindex="0">
+    <h2>📚 Wikipedia de ENHYPEN (Resumen)</h2>
+    <p><strong>ENHYPEN</strong> es un grupo surcoreano formado en 2020 por Belift Lab, una joint venture entre CJ ENM y Big Hit Entertainment (HYBE). Su origen está en el programa survival <em>I-LAND</em>, donde 7 participantes fueron seleccionados entre 23.</p>
+    <p>Durante <em>I-LAND</em>, varios aspirantes quedaron eliminados; algunos estaban cerca de entrar en el grupo final, pero solo los 7 miembros actuales debutaron oficialmente.</p>
+    <p>Desde su debut, ENHYPEN ha lanzado múltiples álbumes y mini álbumes, alcanzando un gran éxito internacional y construyendo una base sólida de fans llamada ENGENE.</p>
+    <p>Actualmente, ENHYPEN continúa activo, realizando conciertos, lanzamientos y creciendo como uno de los grupos principales del K-pop global.</p>
+    <p>Para más información, puedes visitar su <a href="https://es.wikipedia.org/wiki/ENHYPEN" target="_blank" rel="noopener noreferrer">Wikipedia oficial</a>.</p>
+  </section>
+</main>
+
+<button id="topBtn" aria-label="Volver arriba" title="Volver arriba">⬆️</button>
+
+<script>
+  const topBtn = document.getElementById('topBtn');
+  topBtn.addEventListener('click', () => {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  });
+</script>
 
 </body>
 </html>
