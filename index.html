@@ -2,310 +2,318 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>ENHYPEN – Perfil & Discografía</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Wikipedia interactiva - ENHYPEN</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
-
     body {
-      font-family: 'Quicksand', sans-serif;
-      background: #f2f6ff;
-      color: #333;
-      margin: 0;
-      padding: 20px;
+      font-family: Georgia, serif;
+      line-height: 1.6;
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+      background-color: #fafafa;
+      color: #222;
       scroll-behavior: smooth;
     }
-
-    header {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-
-    header h1 {
-      font-size: 2.8em;
-      color: #5a67d8;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-    }
-
-    nav {
-      background-color: #e0e7ff;
-      padding: 15px;
-      border-radius: 10px;
-      margin-bottom: 40px;
-    }
-
-    nav ul {
-      list-style: none;
-      padding: 0;
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-    }
-
-    nav li a {
-      text-decoration: none;
+    h1, h2, h3 {
+      font-family: 'Trebuchet MS', sans-serif;
       color: #3c366b;
-      font-weight: 700;
-      font-size: 1.1em;
-      transition: color 0.3s ease;
-    }
-
-    nav li a:hover {
-      color: #7f8fff;
-    }
-
-    section {
-      margin-bottom: 50px;
-      max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    h2 {
-      color: #4c51bf;
-      margin-top: 20px;
-      margin-bottom: 20px;
-      border-bottom: 2px solid #a1aaff;
-      padding-bottom: 5px;
-    }
-
-    .miembro {
-      margin: 20px 0;
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      background: white;
-      border-radius: 15px;
-      padding: 15px;
-      box-shadow: 0 6px 12px rgba(0,0,0,0.08);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
       cursor: pointer;
     }
-
-    .miembro:hover {
-      transform: scale(1.05);
-      box-shadow: 0 12px 24px rgba(90,103,216,0.4);
+    h1 {
+      border-bottom: 2px solid #7c3aed;
+      padding-bottom: 10px;
     }
-
-    .miembro img {
-      width: 150px;
-      border-radius: 15px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
+    h2 {
+      margin-top: 40px;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 6px;
     }
-
-    .miembro img:hover {
-      transform: scale(1.1);
+    p {
+      margin: 15px 0;
     }
-
-    .miembro-info {
-      max-width: 600px;
-      font-weight: 600;
-      font-size: 1.1em;
-      color: #222;
+    ul {
+      margin: 10px 0 20px 40px;
     }
-
-    ul.album-list, ul {
-      padding-left: 20px;
-      font-size: 1.1em;
+    a {
+      color: #7c3aed;
+      text-decoration: none;
     }
-
-    /* Botón volver arriba */
-    #topBtn {
+    a:hover {
+      text-decoration: underline;
+    }
+    blockquote {
+      border-left: 4px solid #7c3aed;
+      padding-left: 15px;
+      color: #555;
+      font-style: italic;
+      margin: 20px 0;
+      background-color: #f0e8ff;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      margin: 20px 0;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+    }
+    .caption {
+      font-size: 0.9em;
+      color: #555;
+      text-align: center;
+      margin-top: -10px;
+      margin-bottom: 30px;
+      font-style: italic;
+    }
+    nav#menu {
       position: fixed;
-      bottom: 25px;
-      right: 25px;
-      background-color: #5a67d8;
+      top: 10px;
+      right: 20px;
+      background: #e0d8ff;
+      border-radius: 8px;
+      padding: 15px;
+      box-shadow: 0 4px 15px rgba(124, 58, 237, 0.4);
+      max-width: 220px;
+      font-family: 'Trebuchet MS', sans-serif;
+      z-index: 1000;
+    }
+    nav#menu h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      color: #5a4bd8;
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+    nav#menu ul {
+      list-style: none;
+      padding-left: 0;
+      max-height: 300px;
+      overflow-y: auto;
+      margin-bottom: 10px;
+    }
+    nav#menu li {
+      margin: 6px 0;
+    }
+    nav#menu a {
+      color: #3c366b;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    nav#menu a:hover {
+      text-decoration: underline;
+    }
+    button.toggle-btn {
+      background: #7c3aed;
       color: white;
       border: none;
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      font-size: 24px;
+      border-radius: 5px;
+      padding: 5px 10px;
+      font-size: 0.9em;
       cursor: pointer;
-      box-shadow: 0 4px 12px rgba(90,103,216,0.6);
-      opacity: 0.7;
-      transition: opacity 0.3s ease;
-      z-index: 100;
+      margin-left: 10px;
     }
-
-    #topBtn:hover {
-      opacity: 1;
+    button.toggle-btn:hover {
+      background: #5a31c8;
     }
-
-    /* Música de fondo - ocultar controles */
-    audio {
+    section.collapsible > div.content {
       display: none;
+      margin-top: 10px;
     }
-
-    /* Responsive */
-    @media (max-width: 600px) {
-      nav ul {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .miembro {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .miembro img {
-        width: 120px;
-      }
-
-      .miembro-info {
-        max-width: 100%;
-      }
+    section.collapsible.open > div.content {
+      display: block;
+    }
+    #search-container {
+      margin: 20px 0;
+      text-align: center;
+    }
+    #search {
+      width: 80%;
+      max-width: 350px;
+      padding: 8px 12px;
+      font-size: 1em;
+      border: 2px solid #7c3aed;
+      border-radius: 6px;
+      outline: none;
+    }
+    #backToTop {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #7c3aed;
+      border: none;
+      padding: 12px 16px;
+      color: white;
+      font-size: 1.2em;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(124, 58, 237, 0.5);
+      display: none;
+      z-index: 1001;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>ENHYPEN ✨</h1>
-    <p>Un grupo formado en I-LAND bajo Belift Lab (HYBE)</p>
-  </header>
+  <h1>ENHYPEN</h1>
+  <p><strong>ENHYPEN</strong> es un grupo masculino surcoreano formado por Belift Lab, una joint venture entre CJ ENM y HYBE Corporation. El grupo se formó a través del programa de supervivencia <a href="https://es.wikipedia.org/wiki/I-LAND" target="_blank" rel="noopener">I-LAND</a> y debutó oficialmente el 30 de noviembre de 2020.</p>
 
-  <nav>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Enhypen_at_KCON_Mexico_2022.png/800px-Enhypen_at_KCON_Mexico_2022.png" alt="ENHYPEN en KCON México 2022" />
+  <div class="caption">ENHYPEN en KCON México 2022.</div>
+
+  <nav id="menu">
+    <h3>Índice</h3>
     <ul>
-      <li><a href="#debut">📅 Fecha de debut</a></li>
-      <li><a href="#integrantes">👥 Miembros</a></li>
-      <li><a href="#cumples">🎂 Cumpleaños</a></li>
-      <li><a href="#albums">💿 Álbumes</a></li>
-      <li><a href="#engene">💖 Aniversario de ENGENE</a></li>
+      <li><a href="#origen">Origen y formación: I-LAND</a></li>
+      <li><a href="#debut">Debut y primeros lanzamientos</a></li>
+      <li><a href="#miembros">Miembros</a></li>
+      <li><a href="#discografia">Discografía destacada</a></li>
+      <li><a href="#popularidad">Popularidad y logros</a></li>
+      <li><a href="#actualidad">Actualidad</a></li>
     </ul>
   </nav>
 
-  <section id="debut">
-    <h2>📅 Fecha de debut</h2>
-    <p>ENHYPEN debutó oficialmente el <strong>30 de noviembre de 2020</strong> con el álbum <em>"BORDER: DAY ONE"</em>.</p>
-  </section>
+  <section id="origen" class="collapsible">
+    <h2>Origen y formación: I-LAND
+      <button class="toggle-btn" aria-expanded="false" aria-controls="origen-content">Mostrar</button>
+    </h2>
+    <div class="content" id="origen-content">
+      <p>El grupo fue creado por medio de <strong>I-LAND</strong>, un programa de televisión de supervivencia que combinó entrenamiento, competencias y votación de los fans globales para seleccionar a los futuros integrantes del grupo. El programa se emitió desde junio hasta septiembre de 2020.</p>
+      <p>I-LAND comenzó con 23 participantes, pero sólo 7 lograron debutar como ENHYPEN:</p>
+      <ul>
+        <li><strong>Jungwon</strong> (líder)</li>
+        <li><strong>Heeseung</strong></li>
+        <li><strong>Jay</strong></li>
+        <li><strong>Jake</strong></li>
+        <li><strong>Sunghoon</strong></li>
+        <li><strong>Sunoo</strong></li>
+        <li><strong>Ni-ki</strong> (maknae)</li>
+      </ul>
 
-  <section id="integrantes">
-    <h2>👥 Miembros de ENHYPEN</h2>
-
-    <div class="miembro">
-      <img src="https://i.pinimg.com/originals/64/c8/94/64c894ae45b5126fa7b9e58069c5fd95.jpg" alt="Heeseung" />
-      <div class="miembro-info">
-        <strong>Heeseung</strong><br />
-        Vocalista, bailarín, centro<br />
-        Nacionalidad: Coreano
-      </div>
-    </div>
-
-    <div class="miembro">
-      <img src="https://i.pinimg.com/originals/56/fc/3f/56fc3f92cd020d5a26ab841b10f5dfe6.jpg" alt="Jay" />
-      <div class="miembro-info">
-        <strong>Jay</strong><br />
-        Rapero, bailarín<br />
-        Nacionalidad: Coreano-americano
-      </div>
-    </div>
-
-    <div class="miembro">
-      <img src="https://i.pinimg.com/originals/ff/7e/2d/ff7e2dbeb6794f52eeaf93c8301b28e5.jpg" alt="Jake" />
-      <div class="miembro-info">
-        <strong>Jake</strong><br />
-        Vocalista, rapero<br />
-        Nacionalidad: Coreano-australiano
-      </div>
-    </div>
-
-    <div class="miembro">
-      <img src="https://i.pinimg.com/originals/e0/d1/b5/e0d1b514dfad3b3be0536b02db3d0fd7.jpg" alt="Sunghoon" />
-      <div class="miembro-info">
-        <strong>Sunghoon</strong><br />
-        Visual, vocalista<br />
-        Ex patinador artístico profesional
-      </div>
-    </div>
-
-    <div class="miembro">
-      <img src="https://i.pinimg.com/originals/d7/29/fb/d729fbdc8f3f1d41cfb23d8e949fdbb3.jpg" alt="Sunoo" />
-      <div class="miembro-info">
-        <strong>Sunoo</strong><br />
-        Vocalista, energía del grupo<br />
-        Carismático y expresivo
-      </div>
-    </div>
-
-    <div class="miembro">
-      <img src="https://i.pinimg.com/originals/f3/15/f9/f315f9301fd38ff7b267f1c5b90fef10.jpg" alt="Jungwon" />
-      <div class="miembro-info">
-        <strong>Jungwon</strong><br />
-        Líder, bailarín<br />
-        Nacionalidad: Coreano
-      </div>
-    </div>
-
-    <div class="miembro">
-      <img src="https://i.pinimg.com/originals/85/67/4e/85674e846cf40a813f43c8fd4f14cc5b.jpg" alt="Ni-ki" />
-      <div class="miembro-info">
-        <strong>Ni-ki</strong><br />
-        Maknae, bailarín principal<br />
-        Nacionalidad: Japonés
-      </div>
+      <h3>Participantes destacados y eliminados cercanos</h3>
+      <p>En I-LAND hubo varios participantes que tuvieron un desempeño notable, pero no llegaron al debut. Uno de los más recordados es <strong>Yang Jungwon</strong>, quien finalmente se convirtió en líder y debutó con ENHYPEN.</p>
+      <p>Por otro lado, algunos participantes quedaron fuera en las etapas finales, muy cerca del debut. Por ejemplo, <em>Lee Hee-seung</em> (no confundir con el miembro Heeseung) y otros quedaron fuera en las últimas eliminaciones.</p>
+      <p>El sistema de votación combinaba la evaluación del panel de expertos y la votación de los fans globales, lo que dio mucha emoción al proceso.</p>
     </div>
   </section>
 
-  <section id="cumples">
-    <h2>🎂 Cumpleaños de los miembros</h2>
-    <ul>
-      <li><strong>Heeseung:</strong> 15 de octubre de 2001</li>
-      <li><strong>Jay:</strong> 20 de abril de 2002</li>
-      <li><strong>Jake:</strong> 15 de noviembre de 2002</li>
-      <li><strong>Sunghoon:</strong> 8 de diciembre de 2002</li>
-      <li><strong>Sunoo:</strong> 24 de junio de 2003</li>
-      <li><strong>Jungwon:</strong> 9 de febrero de 2004</li>
-      <li><strong>Ni-ki:</strong> 9 de diciembre de 2005</li>
-    </ul>
+  <section id="debut" class="collapsible">
+    <h2>Debut y primeros lanzamientos
+      <button class="toggle-btn" aria-expanded="false" aria-controls="debut-content">Mostrar</button>
+    </h2>
+    <div class="content" id="debut-content">
+      <p>ENHYPEN debutó el 30 de noviembre de 2020 con el mini álbum <em>"BORDER: DAY ONE"</em>. Su debut fue un éxito comercial, logrando buenas posiciones en las listas musicales de Corea y otros países.</p>
+      <p>Desde entonces, han lanzado varios álbumes y mini álbumes que han aumentado su popularidad y consolidado su estilo característico, que mezcla pop, EDM, hip-hop y elementos oscuros y dramáticos.</p>
+    </div>
   </section>
 
-  <section id="albums">
-    <h2>💿 Discografía de ENHYPEN</h2>
-    <ul class="album-list">
-      <li><strong>BORDER: DAY ONE</strong> (2020)</li>
-      <li><strong>BORDER: CARNIVAL</strong> (2021)</li>
-      <li><strong>DIMENSION: DILEMMA</strong> (2021)</li>
-      <li><strong>DIMENSION: ANSWER</strong> (2022)</li>
-      <li><strong>MANIFESTO: DAY 1</strong> (2022)</li>
-      <li><strong>DARK BLOOD</strong> (2023)</li>
-      <li><strong>ORANGE BLOOD</strong> (2023)</li>
-    </ul>
+  <section id="miembros" class="collapsible">
+    <h2>Miembros
+      <button class="toggle-btn" aria-expanded="false" aria-controls="miembros-content">Mostrar</button>
+    </h2>
+    <div class="content" id="miembros-content">
+      <input type="text" id="search-miembros" placeholder="Buscar miembro..." />
+      <ul id="miembros-lista">
+        <li>Jungwon (líder)</li>
+        <li>Heeseung</li>
+        <li>Jay</li>
+        <li>Jake</li>
+        <li>Sunghoon</li>
+        <li>Sunoo</li>
+        <li>Ni-ki (maknae)</li>
+      </ul>
+    </div>
   </section>
 
-  <section id="engene">
-    <h2>💖 Aniversario de ENGENE</h2>
-    <p>El fandom <strong>ENGENE</strong> fue nombrado oficialmente el <strong>8 de octubre de 2020</strong>. ¡Gracias por acompañar a ENHYPEN desde el inicio!</p>
+  <section id="discografia" class="collapsible">
+    <h2>Discografía destacada
+      <button class="toggle-btn" aria-expanded="false" aria-controls="discografia-content">Mostrar</button>
+    </h2>
+    <div class="content" id="discografia-content">
+      <input type="text" id="search-discografia" placeholder="Buscar álbum..." />
+      <ul id="discografia-lista">
+        <li>BORDER: DAY ONE (2020)</li>
+        <li>BORDER: CARNIVAL (2021)</li>
+        <li>DIMENSION: DILEMMA (2021)</li>
+        <li>MANIFESTO: DAY 1 (2022)</li>
+        <li>FATELESS (2023)</li>
+      </ul>
+    </div>
   </section>
 
-  <!-- Botón volver arriba -->
-  <button id="topBtn" title="Volver arriba">⬆️</button>
+  <section id="popularidad" class="collapsible">
+    <h2>Popularidad y logros
+      <button class="toggle-btn" aria-expanded="false" aria-controls="popularidad-content">Mostrar</button>
+    </h2>
+    <div class="content" id="popularidad-content">
+      <p>ENHYPEN rápidamente ganó reconocimiento internacional, acumulando millones de fans (conocidos como <strong>ENGENE</strong>) en todo el mundo. Su música ha sido premiada y ha roto récords en plataformas de streaming.</p>
+      <blockquote>"ENHYPEN es uno de los grupos rookie más exitosos de su generación."</blockquote>
+    </div>
+  </section>
 
-  <!-- Música de fondo -->
-  <audio autoplay loop>
-    <source src="https://cdn.pixabay.com/download/audio/2022/03/03/audio_3e1b988a7a.mp3?filename=lofi-study-11260.mp3" type="audio/mpeg" />
-    Tu navegador no soporta el audio.
-  </audio>
+  <section id="actualidad" class="collapsible">
+    <h2>Actualidad
+      <button class="toggle-btn" aria-expanded="false" aria-controls="actualidad-content">Mostrar</button>
+    </h2>
+    <div class="content" id="actualidad-content">
+      <p>Hasta 2025, ENHYPEN continúa lanzando música, haciendo giras y participando en programas y eventos globales. El grupo sigue evolucionando en estilo y performance, manteniendo una fuerte conexión con sus fans.</p>
+      <p>Además, sus miembros exploran proyectos individuales y colaboraciones, mostrando versatilidad artística.</p>
+    </div>
+  </section>
+
+  <button id="backToTop" title="Volver arriba">↑</button>
 
   <script>
+    // Mostrar/ocultar secciones
+    const toggleButtons = document.querySelectorAll('button.toggle-btn');
+    toggleButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const section = btn.closest('section.collapsible');
+        const content = section.querySelector('.content');
+        const isOpen = section.classList.toggle('open');
+        btn.textContent = isOpen ? 'Ocultar' : 'Mostrar';
+        btn.setAttribute('aria-expanded', isOpen);
+      });
+    });
+
+    // Buscar miembros
+    const searchMiembros = document.getElementById('search-miembros');
+    const miembrosLista = document.getElementById('miembros-lista');
+    searchMiembros.addEventListener('input', () => {
+      const filtro = searchMiembros.value.toLowerCase();
+      const items = miembrosLista.getElementsByTagName('li');
+      Array.from(items).forEach(li => {
+        li.style.display = li.textContent.toLowerCase().includes(filtro) ? '' : 'none';
+      });
+    });
+
+    // Buscar discografía
+    const searchDiscografia = document.getElementById('search-discografia');
+    const discografiaLista = document.getElementById('discografia-lista');
+    searchDiscografia.addEventListener('input', () => {
+      const filtro = searchDiscografia.value.toLowerCase();
+      const items = discografiaLista.getElementsByTagName('li');
+      Array.from(items).forEach(li => {
+        li.style.display = li.textContent.toLowerCase().includes(filtro) ? '' : 'none';
+      });
+    });
+
     // Botón volver arriba
-    const topBtn = document.getElementById("topBtn");
-    topBtn.style.display = "none";
-
-    window.onscroll = () => {
-      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-        topBtn.style.display = "block";
+    const backToTopBtn = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) {
+        backToTopBtn.style.display = 'block';
       } else {
-        topBtn.style.display = "none";
+        backToTopBtn.style.display = 'none';
       }
-    };
-
-    topBtn.onclick = () => {
+    });
+    backToTopBtn.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
-    };
+    });
+
+    // Abrir la primera sección automáticamente para mejor UX
+    document.querySelector('section.collapsible').classList.add('open');
+    document.querySelector('section.collapsible button.toggle-btn').textContent = 'Ocultar';
+    document.querySelector('section.collapsible button.toggle-btn').setAttribute('aria-expanded', 'true');
   </script>
 
 </body>
