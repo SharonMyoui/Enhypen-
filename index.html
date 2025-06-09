@@ -1,349 +1,164 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Wikipedia interactiva - ENHYPEN</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ENHYPEN – Wiki y Discografía</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
+
     body {
-      font-family: Georgia, serif;
-      line-height: 1.6;
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
-      background-color: #fafafa;
-      color: #222;
-      scroll-behavior: smooth;
+      font-family: 'Quicksand', sans-serif;
+      margin: 0;
+      background-color: #f4f6fa;
+      color: #333;
     }
-    h1, h2, h3 {
-      font-family: 'Trebuchet MS', sans-serif;
-      color: #3c366b;
-      cursor: pointer;
-    }
-    h1 {
-      border-bottom: 2px solid #7c3aed;
-      padding-bottom: 10px;
-    }
-    h2 {
-      margin-top: 40px;
-      border-bottom: 1px solid #ccc;
-      padding-bottom: 6px;
-    }
-    p {
-      margin: 15px 0;
-    }
-    ul {
-      margin: 10px 0 20px 40px;
-    }
-    a {
-      color: #7c3aed;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    blockquote {
-      border-left: 4px solid #7c3aed;
-      padding-left: 15px;
-      color: #555;
-      font-style: italic;
-      margin: 20px 0;
-      background-color: #f0e8ff;
-    }
-    img {
-      max-width: 100%;
-      height: auto;
-      margin: 20px 0;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
-    }
-    .caption {
-      font-size: 0.9em;
-      color: #555;
-      text-align: center;
-      margin-top: -10px;
-      margin-bottom: 30px;
-      font-style: italic;
-    }
-    nav#menu {
+
+    .sidebar {
       position: fixed;
-      top: 10px;
-      right: 20px;
-      background: #e0d8ff;
-      border-radius: 8px;
-      padding: 15px;
-      box-shadow: 0 4px 15px rgba(124, 58, 237, 0.4);
-      max-width: 220px;
-      font-family: 'Trebuchet MS', sans-serif;
-      z-index: 1000;
-    }
-    nav#menu h3 {
-      margin-top: 0;
-      margin-bottom: 10px;
-      color: #5a4bd8;
-      font-weight: bold;
-      font-size: 1.2em;
-    }
-    nav#menu ul {
-      list-style: none;
-      padding-left: 0;
-      max-height: 300px;
+      top: 0;
+      left: 0;
+      width: 220px;
+      height: 100%;
+      background-color: #e6e9f5;
+      padding: 20px;
       overflow-y: auto;
-      margin-bottom: 10px;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.1);
     }
-    nav#menu li {
-      margin: 6px 0;
+
+    .sidebar h2 {
+      font-size: 1.4em;
+      color: #4c51bf;
+      margin-bottom: 20px;
     }
-    nav#menu a {
-      color: #3c366b;
+
+    .sidebar a {
+      display: block;
+      margin: 10px 0;
+      color: #2c3e50;
       text-decoration: none;
-      cursor: pointer;
+      font-weight: bold;
     }
-    nav#menu a:hover {
+
+    .sidebar a:hover {
+      color: #5a67d8;
+    }
+
+    .main-content {
+      margin-left: 240px;
+      padding: 30px;
+    }
+
+    section {
+      margin-bottom: 50px;
+    }
+
+    h1, h2 {
+      color: #5a67d8;
+    }
+
+    .miembro {
+      margin: 20px 0;
+    }
+
+    .miembro a {
+      font-weight: bold;
+      color: #5a67d8;
+      text-decoration: none;
+    }
+
+    .miembro a:hover {
       text-decoration: underline;
     }
-    button.toggle-btn {
-      background: #7c3aed;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      padding: 5px 10px;
-      font-size: 0.9em;
-      cursor: pointer;
-      margin-left: 10px;
-    }
-    button.toggle-btn:hover {
-      background: #5a31c8;
-    }
-    section.collapsible > div.content {
-      display: none;
-      margin-top: 10px;
-    }
-    section.collapsible.open > div.content {
-      display: block;
-    }
-    #search-container {
-      margin: 20px 0;
-      text-align: center;
-    }
-    #search {
-      width: 80%;
-      max-width: 350px;
-      padding: 8px 12px;
-      font-size: 1em;
-      border: 2px solid #7c3aed;
-      border-radius: 6px;
-      outline: none;
-    }
-    #backToTop {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      background-color: #7c3aed;
-      border: none;
-      padding: 12px 16px;
-      color: white;
-      font-size: 1.2em;
-      border-radius: 50%;
-      cursor: pointer;
-      box-shadow: 0 4px 12px rgba(124, 58, 237, 0.5);
-      display: none;
-      z-index: 1001;
+
+    ul {
+      padding-left: 20px;
     }
   </style>
 </head>
 <body>
 
-  <h1>ENHYPEN</h1>
-  <p><strong>ENHYPEN</strong> es un grupo masculino surcoreano formado por Belift Lab, una joint venture entre CJ ENM y HYBE Corporation. El grupo se formó a través del programa de supervivencia <a href="https://es.wikipedia.org/wiki/I-LAND" target="_blank" rel="noopener">I-LAND</a> y debutó oficialmente el 30 de noviembre de 2020.</p>
+<div class="sidebar">
+  <h2>Índice</h2>
+  <a href="#historia">Historia</a>
+  <a href="#integrantes">Miembros</a>
+  <a href="#cumples">Cumpleaños</a>
+  <a href="#albums">Álbumes</a>
+  <a href="#mini">Mini Álbumes</a>
+  <a href="#recom">Canciones Recomendadas</a>
+  <a href="#engene">ENGENE</a>
+</div>
 
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Enhypen_at_KCON_Mexico_2022.png/800px-Enhypen_at_KCON_Mexico_2022.png" alt="ENHYPEN en KCON México 2022" />
-  <div class="caption">ENHYPEN en KCON México 2022.</div>
+<div class="main-content">
+  <section id="historia">
+    <h1>ENHYPEN</h1>
+    <p>ENHYPEN es un grupo surcoreano formado en 2020 a través del programa de supervivencia <strong>I-LAND</strong> producido por HYBE y CJ ENM. Durante el programa, los concursantes compitieron por un lugar en el grupo final. <strong>Heeseung</strong>, <strong>Jay</strong>, <strong>Jake</strong>, <strong>Sunghoon</strong>, <strong>Sunoo</strong>, <strong>Jungwon</strong> (líder), y <strong>Ni-ki</strong> fueron los finalistas seleccionados. Algunos favoritos como <em>K</em> y <em>Daniel</em> fueron eliminados inesperadamente.</p>
+    <p>Debutaron el 30 de noviembre de 2020 con el mini álbum <strong>"BORDER: DAY ONE"</strong>. Desde entonces, han ganado popularidad global y múltiples premios.</p>
+  </section>
 
-  <nav id="menu">
-    <h3>Índice</h3>
+  <section id="integrantes">
+    <h2>Miembros</h2>
+    <div class="miembro"><a href="https://pin.it/3PpXx7F">Heeseung</a> – Vocalista, bailarín, centro</div>
+    <div class="miembro"><a href="https://pin.it/6uYAxEP">Jay</a> – Rapero, bailarín</div>
+    <div class="miembro"><a href="https://pin.it/1pEzyxN">Jake</a> – Vocalista, rapero</div>
+    <div class="miembro"><a href="https://pin.it/5kUPFaa">Sunghoon</a> – Visual, vocalista</div>
+    <div class="miembro"><a href="https://pin.it/4p4KsGU">Sunoo</a> – Vocalista, energía del grupo</div>
+    <div class="miembro"><a href="https://pin.it/3iG6whg">Jungwon</a> – Líder, bailarín</div>
+    <div class="miembro"><a href="https://pin.it/1eqRk2m">Ni-ki</a> – Maknae, bailarín principal</div>
+  </section>
+
+  <section id="cumples">
+    <h2>Cumpleaños</h2>
     <ul>
-      <li><a href="#origen">Origen y formación: I-LAND</a></li>
-      <li><a href="#debut">Debut y primeros lanzamientos</a></li>
-      <li><a href="#miembros">Miembros</a></li>
-      <li><a href="#discografia">Discografía destacada</a></li>
-      <li><a href="#popularidad">Popularidad y logros</a></li>
-      <li><a href="#actualidad">Actualidad</a></li>
+      <li>Heeseung: 15 de octubre de 2001</li>
+      <li>Jay: 20 de abril de 2002</li>
+      <li>Jake: 15 de noviembre de 2002</li>
+      <li>Sunghoon: 8 de diciembre de 2002</li>
+      <li>Sunoo: 24 de junio de 2003</li>
+      <li>Jungwon: 9 de febrero de 2004</li>
+      <li>Ni-ki: 9 de diciembre de 2005</li>
     </ul>
-  </nav>
-
-  <section id="origen" class="collapsible">
-    <h2>Origen y formación: I-LAND
-      <button class="toggle-btn" aria-expanded="false" aria-controls="origen-content">Mostrar</button>
-    </h2>
-    <div class="content" id="origen-content">
-      <p>El grupo fue creado por medio de <strong>I-LAND</strong>, un programa de televisión de supervivencia que combinó entrenamiento, competencias y votación de los fans globales para seleccionar a los futuros integrantes del grupo. El programa se emitió desde junio hasta septiembre de 2020.</p>
-      <p>I-LAND comenzó con 23 participantes, pero sólo 7 lograron debutar como ENHYPEN:</p>
-      <ul>
-        <li><strong>Jungwon</strong> (líder)</li>
-        <li><strong>Heeseung</strong></li>
-        <li><strong>Jay</strong></li>
-        <li><strong>Jake</strong></li>
-        <li><strong>Sunghoon</strong></li>
-        <li><strong>Sunoo</strong></li>
-        <li><strong>Ni-ki</strong> (maknae)</li>
-      </ul>
-
-      <h3>Participantes destacados y eliminados cercanos</h3>
-      <p>En I-LAND hubo varios participantes que tuvieron un desempeño notable, pero no llegaron al debut. Uno de los más recordados es <strong>Yang Jungwon</strong>, quien finalmente se convirtió en líder y debutó con ENHYPEN.</p>
-      <p>Por otro lado, algunos participantes quedaron fuera en las etapas finales, muy cerca del debut. Por ejemplo, <em>Lee Hee-seung</em> (no confundir con el miembro Heeseung) y otros quedaron fuera en las últimas eliminaciones.</p>
-      <p>El sistema de votación combinaba la evaluación del panel de expertos y la votación de los fans globales, lo que dio mucha emoción al proceso.</p>
-    </div>
   </section>
 
-  <section id="debut" class="collapsible">
-    <h2>Debut y primeros lanzamientos
-      <button class="toggle-btn" aria-expanded="false" aria-controls="debut-content">Mostrar</button>
-    </h2>
-    <div class="content" id="debut-content">
-      <p>ENHYPEN debutó el 30 de noviembre de 2020 con el mini álbum <em>"BORDER: DAY ONE"</em>. Su debut fue un éxito comercial, logrando buenas posiciones en las listas musicales de Corea y otros países.</p>
-      <p>Desde entonces, han lanzado varios álbumes y mini álbumes que han aumentado su popularidad y consolidado su estilo característico, que mezcla pop, EDM, hip-hop y elementos oscuros y dramáticos.</p>
-    </div>
+  <section id="albums">
+    <h2>Álbumes</h2>
+    <ul>
+      <li><a href="https://www.youtube.com/watch?v=Ap5Vd8D54a4">BORDER: DAY ONE</a> (2020)</li>
+      <li><a href="https://www.youtube.com/watch?v=7gzZEtiusO4">BORDER: CARNIVAL</a> (2021)</li>
+      <li><a href="https://www.youtube.com/watch?v=2hcM5hqQ45s">DIMENSION: DILEMMA</a> (2021)</li>
+      <li><a href="https://www.youtube.com/watch?v=_wCHmH2GsZQ">DIMENSION: ANSWER</a> (2022)</li>
+      <li><a href="https://www.youtube.com/watch?v=0H7N9kTxp3I">MANIFESTO: DAY 1</a> (2022)</li>
+      <li><a href="https://www.youtube.com/watch?v=tG3aJQ8jZTo">DARK BLOOD</a> (2023)</li>
+      <li><a href="https://www.youtube.com/watch?v=nhy6fIuPIFM">ORANGE BLOOD</a> (2023)</li>
+    </ul>
   </section>
 
-  <section id="miembros" class="collapsible">
-    <h2>Miembros
-      <button class="toggle-btn" aria-expanded="false" aria-controls="miembros-content">Mostrar</button>
-    </h2>
-    <div class="content" id="miembros-content">
-      <input type="text" id="search-miembros" placeholder="Buscar miembro..." />
-      <ul id="miembros-lista">
-        <li>Jungwon (líder)</li>
-        <li>Heeseung</li>
-        <li>Jay</li>
-        <li>Jake</li>
-        <li>Sunghoon</li>
-        <li>Sunoo</li>
-        <li>Ni-ki (maknae)</li>
-      </ul>
-    </div>
+  <section id="mini">
+    <h2>Mini Álbumes</h2>
+    <ul>
+      <li><a href="https://www.youtube.com/watch?v=Ap5Vd8D54a4">BORDER: DAY ONE</a></li>
+      <li><a href="https://www.youtube.com/watch?v=7gzZEtiusO4">BORDER: CARNIVAL</a></li>
+      <li><a href="https://www.youtube.com/watch?v=tG3aJQ8jZTo">DARK BLOOD</a></li>
+    </ul>
   </section>
 
-  <section id="discografia" class="collapsible">
-    <h2>Discografía destacada
-      <button class="toggle-btn" aria-expanded="false" aria-controls="discografia-content">Mostrar</button>
-    </h2>
-    <div class="content" id="discografia-content">
-      <input type="text" id="search-discografia" placeholder="Buscar álbum..." />
-      <ul id="discografia-lista">
-        <li>BORDER: DAY ONE (2020)</li>
-        <li>BORDER: CARNIVAL (2021)</li>
-        <li>DIMENSION: DILEMMA (2021)</li>
-        <li>MANIFESTO: DAY 1 (2022)</li>
-        <li>FATELESS (2023)</li>
-      </ul>
-    </div>
+  <section id="recom">
+    <h2>Canciones que te recomiendo</h2>
+    <ul>
+      <li><a href="https://www.youtube.com/watch?v=Ap5Vd8D54a4">Given-Taken</a></li>
+      <li><a href="https://www.youtube.com/watch?v=7gzZEtiusO4">Drunk-Dazed</a></li>
+      <li><a href="https://www.youtube.com/watch?v=_wCHmH2GsZQ">Blessed-Cursed</a></li>
+      <li><a href="https://www.youtube.com/watch?v=0H7N9kTxp3I">Future Perfect (Pass the MIC)</a></li>
+      <li><a href="https://www.youtube.com/watch?v=tG3aJQ8jZTo">Bite Me</a></li>
+      <li><a href="https://www.youtube.com/watch?v=nhy6fIuPIFM">Sweet Venom</a></li>
+    </ul>
   </section>
 
-  <section id="popularidad" class="collapsible">
-    <h2>Popularidad y logros
-      <button class="toggle-btn" aria-expanded="false" aria-controls="popularidad-content">Mostrar</button>
-    </h2>
-    <div class="content" id="popularidad-content">
-      <p>ENHYPEN rápidamente ganó reconocimiento internacional, acumulando millones de fans (conocidos como <strong>ENGENE</strong>) en todo el mundo. Su música ha sido premiada y ha roto récords en plataformas de streaming.</p>
-      <blockquote>"ENHYPEN es uno de los grupos rookie más exitosos de su generación."</blockquote>
-    </div>
+  <section id="engene">
+    <h2>ENGENE</h2>
+    <p>El nombre del fandom "ENGENE" fue anunciado el 8 de octubre de 2020. Representa el vínculo entre ENHYPEN y sus fans, quienes son considerados el motor (engine) que los impulsa. ¡Feliz aniversario a todos los ENGENE cada año en esa fecha!</p>
   </section>
-
-  <section id="actualidad" class="collapsible">
-    <h2>Actualidad
-      <button class="toggle-btn" aria-expanded="false" aria-controls="actualidad-content">Mostrar</button>
-    </h2>
-    <div class="content" id="actualidad-content">
-      <p>Hasta 2025, ENHYPEN continúa lanzando música, haciendo giras y participando en programas y eventos globales. El grupo sigue evolucionando en estilo y performance, manteniendo una fuerte conexión con sus fans.</p>
-      <p>Además, sus miembros exploran proyectos individuales y colaboraciones, mostrando versatilidad artística.</p>
-    </div>
-  </section>
-
-  <button id="backToTop" title="Volver arriba">↑</button>
-
-  <script>
-    // Mostrar/ocultar secciones
-    const toggleButtons = document.querySelectorAll('button.toggle-btn');
-    toggleButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const section = btn.closest('section.collapsible');
-        const content = section.querySelector('.content');
-        const isOpen = section.classList.toggle('open');
-        btn.textContent = isOpen ? 'Ocultar' : 'Mostrar';
-        btn.setAttribute('aria-expanded', isOpen);
-      });
-    });
-
-    // Buscar miembros
-    const searchMiembros = document.getElementById('search-miembros');
-    const miembrosLista = document.getElementById('miembros-lista');
-    searchMiembros.addEventListener('input', () => {
-      const filtro = searchMiembros.value.toLowerCase();
-      const items = miembrosLista.getElementsByTagName('li');
-      Array.from(items).forEach(li => {
-        li.style.display = li.textContent.toLowerCase().includes(filtro) ? '' : 'none';
-      });
-    });
-
-    // Buscar discografía
-    const searchDiscografia = document.getElementById('search-discografia');
-    const discografiaLista = document.getElementById('discografia-lista');
-    searchDiscografia.addEventListener('input', () => {
-      const filtro = searchDiscografia.value.toLowerCase();
-      const items = discografiaLista.getElementsByTagName('li');
-      Array.from(items).forEach(li => {
-        li.style.display = li.textContent.toLowerCase().includes(filtro) ? '' : 'none';
-      });
-    });
-
-    // Botón volver arriba
-    const backToTopBtn = document.getElementById('backToTop');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 400) {
-        backToTopBtn.style.display = 'block';
-      } else {
-        backToTopBtn.style.display = 'none';
-      }
-    });
-    backToTopBtn.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-
-    // Abrir la primera sección automáticamente para mejor UX
-    document.querySelector('section.collapsible').classList.add('open');
-    document.querySelector('section.collapsible button.toggle-btn').textContent = 'Ocultar';
-    document.querySelector('section.collapsible button.toggle-btn').setAttribute('aria-expanded', 'true');
-  </script>
-<section id="albums">
-  <h2>💿 Álbumes de Estudio</h2>
-  <ul>
-    <li><strong>DIMENSION: DILEMMA</strong> – 2021</li>
-    <li><strong>MANIFESTO: DAY 1</strong> – 2022</li>
-    <li><strong>DARK BLOOD</strong> – 2023</li>
-    <li><strong>ROMANCE: UNTOLD</strong> – 2024</li>
-  </ul>
-</section>
-<section id="mini-albumes">
-  <h2>📀 Mini Álbumes</h2>
-  <ul>
-    <li><strong>BORDER: DAY ONE</strong> – 2020</li>
-    <li><strong>BORDER: CARNIVAL</strong> – 2021</li>
-    <li><strong>DIMENSION: ANSWER</strong> – 2022</li>
-    <li><strong>ORANGE BLOOD</strong> – 2023</li>
-  </ul>
-</section>
-<section id="canciones">
-  <h2>🎧 Canciones que te recomiendo escuchar</h2>
-  <ul>
-    <li><a href="https://www.youtube.com/watch?v=nQ6wLuYvGd8" target="_blank"><strong>Fever</strong></a> – Sensual y adictiva, perfecta para engancharte</li>
-    <li><a href="https://www.youtube.com/watch?v=Y9lg3cZfbaI" target="_blank"><strong>Drunk-Dazed</strong></a> – Explosiva, con coreografía brutal</li>
-    <li><a href="https://www.youtube.com/watch?v=fCT5GoyMFbI" target="_blank"><strong>Polaroid Love</strong></a> – Dulce y viral, muy amada por fans</li>
-    <li><a href="https://www.youtube.com/watch?v=ZzWRw34hymQ" target="_blank"><strong>Future Perfect (Pass the MIC)</strong></a> – Intensidad pura</li>
-    <li><a href="https://www.youtube.com/watch?v=Z3oEz8FzFwE" target="_blank"><strong>Bite Me</strong></a> – Vampírica, elegante, única</li>
-    <li><a href="https://www.youtube.com/watch?v=2TQ9wmY5Z3c" target="_blank"><strong>Sacrifice (Eat Me Up)</strong></a> – Oscura y poderosa</li>
-  </ul>
-</section>
+</div>
 
 </body>
 </html>
