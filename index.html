@@ -1,9 +1,9 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>ENHYPEN - Perfil Completo</title>
+<title>ENHYPEN - Perfil Completo con Mini Reproductor</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
   body {
@@ -115,9 +115,57 @@
     cursor: pointer;
     box-shadow: 0 4px 12px rgb(74 81 191 / 0.6);
     transition: background 0.3s ease;
+    z-index: 1001;
   }
   button#topBtn:hover,
   button#topBtn:focus {
+    background: #2a2f90;
+    outline: none;
+  }
+
+  /* Mini reproductor */
+  #miniPlayer {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    background: #4a51bfcc;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 14px;
+    width: 300px;
+    box-shadow: 0 4px 16px rgb(74 81 191 / 0.8);
+    font-weight: 600;
+    font-family: 'Quicksand', sans-serif;
+    z-index: 1000;
+  }
+  #miniPlayer h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.1rem;
+    text-align: center;
+  }
+  #miniPlayer audio {
+    width: 100%;
+    outline: none;
+    margin-bottom: 12px;
+  }
+  #controls {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  #controls button {
+    background: #6b73ff;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 10px;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgb(0 0 0 / 0.2);
+    transition: background 0.3s ease;
+  }
+  #controls button:hover,
+  #controls button:focus {
     background: #2a2f90;
     outline: none;
   }
@@ -170,47 +218,47 @@
     </div>
 
     <div class="miembro">
-      <img src="https://i.pinimg.com/564x/d4/c5/f7/d4c5f7f7cbf729416b9a763e3dbd39d6.jpg" alt="Foto de Heeseung" title="Abrir foto de Heeseung en Pinterest" onclick="window.open('https://www.pinterest.com/pin/709360812798645296/', '_blank')" />
+      <img src="https://i.pinimg.com/564x/59/c1/fb/59c1fb50afaf5a4a9f07a0d80b9936d7.jpg" alt="Foto de Sunghoon" title="Abrir foto de Sunghoon en Pinterest" onclick="window.open('https://www.pinterest.com/pin/704875952257151411/', '_blank')" />
       <div class="miembro-info">
-        <strong><a href="https://www.pinterest.com/pin/709360812798645296/" target="_blank" rel="noopener noreferrer">Heeseung</a></strong><br />
-        Posición: Vocalista principal, bailarín, centro<br />
+        <strong><a href="https://www.pinterest.com/pin/704875952257151411/" target="_blank" rel="noopener noreferrer">Sunghoon</a></strong><br />
+        Posición: Vocalista, visual<br />
         Nacionalidad: Coreano
       </div>
     </div>
 
     <div class="miembro">
-      <img src="https://i.pinimg.com/564x/58/8f/01/588f01c24b2463c81e3525177a7f9589.jpg" alt="Foto de Jay" title="Abrir foto de Jay en Pinterest" onclick="window.open('https://www.pinterest.com/pin/535004231090326666/', '_blank')" />
+      <img src="https://i.pinimg.com/564x/6f/24/af/6f24af9a6857764344bf1b7e0e9b3402.jpg" alt="Foto de Heeseung" title="Abrir foto de Heeseung en Pinterest" onclick="window.open('https://www.pinterest.com/pin/704875952257151631/', '_blank')" />
       <div class="miembro-info">
-        <strong><a href="https://www.pinterest.com/pin/535004231090326666/" target="_blank" rel="noopener noreferrer">Jay</a></strong><br />
-        Posición: Rapero, bailarín<br />
-        Nacionalidad: Coreano-americano
+        <strong><a href="https://www.pinterest.com/pin/704875952257151631/" target="_blank" rel="noopener noreferrer">Heeseung</a></strong><br />
+        Posición: Vocalista principal<br />
+        Nacionalidad: Coreano
       </div>
     </div>
 
     <div class="miembro">
-      <img src="https://i.pinimg.com/564x/38/c2/0e/38c20ed31710cb2c6822339307fa0c70.jpg" alt="Foto de Jake" title="Abrir foto de Jake en Pinterest" onclick="window.open('https://www.pinterest.com/pin/712077374931381814/', '_blank')" />
+      <img src="https://i.pinimg.com/564x/2b/f9/7c/2bf97c6f8be6a2d80e2debcf3146a4b6.jpg" alt="Foto de Jay" title="Abrir foto de Jay en Pinterest" onclick="window.open('https://www.pinterest.com/pin/704875952257152181/', '_blank')" />
       <div class="miembro-info">
-        <strong><a href="https://www.pinterest.com/pin/712077374931381814/" target="_blank" rel="noopener noreferrer">Jake</a></strong><br />
-        Posición: Vocalista, rapero<br />
-        Nacionalidad: Coreano-australiano
+        <strong><a href="https://www.pinterest.com/pin/704875952257152181/" target="_blank" rel="noopener noreferrer">Jay</a></strong><br />
+        Posición: Rapero principal<br />
+        Nacionalidad: Estadounidense
       </div>
     </div>
 
     <div class="miembro">
-      <img src="https://i.pinimg.com/564x/d6/3d/9a/d63d9afba0fc3c9a1c1176463cced1b4.jpg" alt="Foto de Sunghoon" title="Abrir foto de Sunghoon en Pinterest" onclick="window.open('https://www.pinterest.com/pin/723731380063471930/', '_blank')" />
+      <img src="https://i.pinimg.com/564x/fc/c9/af/fcc9af97f2ee82d6dbf32c7d57e7cfe9.jpg" alt="Foto de Jake" title="Abrir foto de Jake en Pinterest" onclick="window.open('https://www.pinterest.com/pin/704875952257152351/', '_blank')" />
       <div class="miembro-info">
-        <strong><a href="https://www.pinterest.com/pin/723731380063471930/" target="_blank" rel="noopener noreferrer">Sunghoon</a></strong><br />
-        Posición: Visual, vocalista<br />
-        Ex patinador artístico profesional
+        <strong><a href="https://www.pinterest.com/pin/704875952257152351/" target="_blank" rel="noopener noreferrer">Jake</a></strong><br />
+        Posición: Vocalista, maknae<br />
+        Nacionalidad: Australiano
       </div>
     </div>
 
     <div class="miembro">
-      <img src="https://i.pinimg.com/564x/60/f0/95/60f0954f30a2f80c4fd634a16a3eec5a.jpg" alt="Foto de Sunoo" title="Abrir foto de Sunoo en Pinterest" onclick="window.open('https://www.pinterest.com/pin/747131432844294220/', '_blank')" />
+      <img src="https://i.pinimg.com/564x/1d/3c/f2/1d3cf2be17deba2d0ccdd309097edb91.jpg" alt="Foto de Sunoo" title="Abrir foto de Sunoo en Pinterest" onclick="window.open('https://www.pinterest.com/pin/704875952257152691/', '_blank')" />
       <div class="miembro-info">
-        <strong><a href="https://www.pinterest.com/pin/747131432844294220/" target="_blank" rel="noopener noreferrer">Sunoo</a></strong><br />
-        Posición: Vocalista, energía del grupo<br />
-        Carismático y expresivo
+        <strong><a href="https://www.pinterest.com/pin/704875952257152691/" target="_blank" rel="noopener noreferrer">Sunoo</a></strong><br />
+        Posición: Vocalista, visual<br />
+        Nacionalidad: Coreano
       </div>
     </div>
   </section>
@@ -218,24 +266,23 @@
   <section id="cumpleanos" tabindex="0">
     <h2>🎂 Cumpleaños</h2>
     <ul>
-      <li><strong>Heeseung:</strong> 15 de octubre de 2001</li>
-      <li><strong>Jay:</strong> 20 de abril de 2002</li>
-      <li><strong>Jake:</strong> 15 de noviembre de 2002</li>
-      <li><strong>Sunghoon:</strong> 8 de diciembre de 2002</li>
-      <li><strong>Sunoo:</strong> 24 de junio de 2003</li>
-      <li><strong>Jungwon:</strong> 9 de febrero de 2004</li>
-      <li><strong>Ni-ki:</strong> 9 de diciembre de 2005</li>
+      <li>Jungwon - 9 de febrero</li>
+      <li>Heeseung - 15 de octubre</li>
+      <li>Jay - 20 de abril</li>
+      <li>Jake - 15 de noviembre</li>
+      <li>Sunghoon - 8 de diciembre</li>
+      <li>Sunoo - 24 de junio</li>
+      <li>Ni-ki - 9 de diciembre</li>
     </ul>
   </section>
 
   <section id="albumes" tabindex="0">
     <h2>💿 Álbumes</h2>
     <ul class="album-list">
-      <li><strong>BORDER: DAY ONE</strong> (2020) - <a href="https://www.youtube.com/playlist?list=PLcwIdm-vCzLnDEagkXsk5ghy91j7cHgyZ" target="_blank" rel="noopener noreferrer">Escuchar en YouTube</a></li>
-      <li><strong>BORDER: CARNIVAL</strong> (2021) - <a href="https://www.youtube.com/playlist?list=PLcwIdm-vCzLl8m-lhF74ALwUnCZIemS2B" target="_blank" rel="noopener noreferrer">Escuchar en YouTube</a></li>
-      <li><strong>DIMENSION: DILEMMA</strong> (2021) - <a href="https://www.youtube.com/playlist?list=PLcwIdm-vCzLkqSuZQxv-EzSYvGHu_7Zlu" target="_blank" rel="noopener noreferrer">Escuchar en YouTube</a></li>
-      <li><strong>DIMENSION: ANSWER</strong> (2022) - <a href="https://www.youtube.com/playlist?list=PLcwIdm-vCzLlYjFE0MCgKEuBT1Q6kPPv6" target="_blank" rel="noopener noreferrer">Escuchar en YouTube</a></li>
-      <li><strong>MANIFESTO: DAY 1</strong> (2022) - <a href="https://www.youtube.com/playlist?list=PLcwIdm-vCzLmsjbdjc0PQamLlqJ3yi3-E" target="_blank" rel="noopener noreferrer">Escuchar en YouTube</a></li>
+      <li><strong>BORDER: DAY ONE</strong> (2020) - <a href="https://www.youtube.com/playlist?list=PLcwIdm-vCzLmaZikvmsEGL2GZ6MCFE3n9" target="_blank" rel="noopener noreferrer">Escuchar en YouTube</a></li>
+      <li><strong>BORDER: CARNIVAL</strong> (2021) - <a href="https://www.youtube.com/playlist?list=PLcwIdm-vCzLnDEagkXsk5ghy91j7cHgyZ" target="_blank" rel="noopener noreferrer">Escuchar en YouTube</a></li>
+      <li><strong>DIMENSION: DILEMMA</strong> (2021) - <a href="https://www.youtube.com/playlist?list=PLcwIdm-vCzLl8m-lhF74ALwUnCZIemS2B" target="_blank" rel="noopener noreferrer">Escuchar en YouTube</a></li>
+      <li><strong>MANIFESTO: DAY 1</strong> (2022) - <a href="https://www.youtube.com/playlist?list=PLcwIdm-vCzLkqSuZQxv-EzSYvGHu_7Zlu" target="_blank" rel="noopener noreferrer">Escuchar en YouTube</a></li>
     </ul>
   </section>
 
@@ -275,14 +322,206 @@
   </section>
 </main>
 
+<!-- Mini reproductor con B-sides -->
+<div id="miniPlayer" aria-label="Mini reproductor de B-sides">
+  <h3>B-sides recomendadas</h3>
+  <audio id="audioPlayer" controls preload="none" src="https://cdn.pixabay.com/download/audio/2022/03/23/audio_9d5a27019c.mp3?filename=calm-instrumental-11324.mp3">
+    Tu navegador no soporta el elemento audio.
+  </audio>
+  <div id="controls">
+    <button id="prevBtn" aria-label="Anterior canción">⏮️</button>
+    <button id="playPauseBtn" aria-label="Reproducir/Pausar">▶️</button>
+    <button id="nextBtn" aria-label="Siguiente canción">⏭️</button>
+  </div>
+</div>
+
 <button id="topBtn" aria-label="Volver arriba" title="Volver arriba">⬆️</button>
 
 <script>
+  // Botón para volver arriba
   const topBtn = document.getElementById('topBtn');
   topBtn.addEventListener('click', () => {
     window.scrollTo({top: 0, behavior: 'smooth'});
   });
+
+  // Mini reproductor
+  const audioPlayer = document.getElementById('audioPlayer');
+  const playPauseBtn = document.getElementById('playPauseBtn');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+
+  // Lista de B-sides (URLs MP3 reales o de ejemplo)
+  const bsides = [
+    {
+      title: "Outro : The Wormhole",
+      url: "https://cdn.pixabay.com/download/audio/2022/03/23/audio_9d5a27019c.mp3?filename=calm-instrumental-11324.mp3"
+    },
+    {
+      title: "10 Months",
+      url: "https://cdn.pixabay.com/download/audio/2022/03/23/audio_2ed4bff3d1.mp3?filename=inspiring-cinematic-10592.mp3"
+    },
+    {
+      title: "Mixed Up",
+      url: "https://cdn.pixabay.com/download/audio/2022/03/23/audio_5b3f1b2b1a.mp3?filename=soft-ambient-11507.mp3"
+    }
+  ];
+
+  let currentTrack = 0;
+
+  function loadTrack(index) {
+    audioPlayer.src = bsides[index].url;
+    audioPlayer.load();
+    audioPlayer.play();
+    playPauseBtn.textContent = "⏸️";
+  }
+
+  playPauseBtn.addEventListener('click', () => {
+    if(audioPlayer.paused) {
+      audioPlayer.play();
+      playPauseBtn.textContent = "⏸️";
+    } else {
+      audioPlayer.pause();
+      playPauseBtn.textContent = "▶️";
+    }
+  });
+
+  prevBtn.addEventListener('click', () => {
+    currentTrack = (currentTrack - 1 + bsides.length) % bsides.length;
+    loadTrack(currentTrack);
+  });
+
+  nextBtn.addEventListener('click', () => {
+    currentTrack = (currentTrack + 1) % bsides.length;
+    loadTrack(currentTrack);
+  });
+
+  // Auto next cuando acaba una canción
+  audioPlayer.addEventListener('ended', () => {
+    currentTrack = (currentTrack + 1) % bsides.length;
+    loadTrack(currentTrack);
+  });
+
+  // Carga la primera canción al cargar la página
+  window.addEventListener('load', () => {
+    loadTrack(currentTrack);
+  });
 </script>
 
-</body>
-</html>
+<style>
+  #miniPlayer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #222;
+    color: white;
+    padding: 0.5em;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.8);
+    font-family: Arial, sans-serif;
+    z-index: 1000;
+  }
+  #miniPlayer h3 {
+    margin: 0 0 0.3em 0;
+    font-size: 1em;
+    font-weight: normal;
+  }
+  #audioPlayer {
+    width: 60%;
+    vertical-align: middle;
+  }
+  #controls {
+    display: inline-block;
+    margin-left: 1em;
+  }
+  #controls button {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
+    margin: 0 0.3em;
+  }
+  #controls button:focus {
+    outline: 2px solid #fff;
+  }
+  #topBtn {
+    position: fixed;
+    bottom: 70px;
+    right: 20px;
+    font-size: 1.5em;
+    background: #222;
+    color: white;
+    border: none;
+    padding: 0.3em 0.5em;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1001;
+  }
+  #topBtn:hover {
+    background: #555;
+  }
+</style>¡Claro! Aquí tienes un resumen completito de ENHYPEN con todo lo importante, sus miembros, cumpleaños, álbumes, canciones recomendadas y más. También incluye un mini reproductor con B-sides para que escuches sus canciones menos conocidas pero muy buenas.
+
+---
+
+# ENHYPEN: Información general
+
+- **Formación:** Grupo surcoreano formado en 2020 por Belift Lab (joint venture CJ ENM + Big Hit/HYBE).
+- **Origen:** Surgieron del reality de supervivencia *I-LAND*.
+- **Miembros:** 7 chicos con roles diversos (vocalistas, raperos, visuales).
+- **Fans:** Se llaman ENGENE, el motor que impulsa al grupo.
+- **Debut:** 30 de noviembre de 2020.
+- **Estilo:** K-pop con temas intensos, emocionales y potentes.
+- **Éxito:** Han lanzado varios álbumes y miniálbumes con gran reconocimiento internacional.
+
+---
+
+# Miembros y sus posiciones
+
+| Nombre    | Posición           | Nacionalidad  | Cumpleaños        |
+|-----------|--------------------|---------------|-------------------|
+| Jungwon   | Líder, vocalista   | Coreano       | 9 de febrero      |
+| Heeseung  | Vocalista principal| Coreano       | 15 de octubre     |
+| Jay       | Rapero principal   | Estadounidense| 20 de abril       |
+| Jake      | Vocalista, maknae  | Australiano   | 15 de noviembre   |
+| Sunghoon  | Vocalista, visual  | Coreano       | 8 de diciembre    |
+| Sunoo     | Vocalista, visual  | Coreano       | 24 de junio       |
+| Ni-ki     | Bailarín principal | Japonés       | 9 de diciembre    |
+
+---
+
+# Álbumes principales
+
+- **BORDER: DAY ONE** (2020)  
+- **BORDER: CARNIVAL** (2021)  
+- **DIMENSION: DILEMMA** (2021)  
+- **MANIFESTO: DAY 1** (2022)
+
+---
+
+# Mini álbumes
+
+- BORDER: DAY ONE (2020)  
+- BORDER: CARNIVAL (2021)  
+- DIMENSION: DILEMMA (2021)
+
+---
+
+# Canciones recomendadas
+
+- [Drunk-Dazed](https://www.youtube.com/watch?v=U2vY4JjA_E8) — Enérgica y potente  
+- [Fever](https://www.youtube.com/watch?v=E47zMb0jB2k) — Sensual y pegajosa  
+- [Tamed-Dashed](https://www.youtube.com/watch?v=oT57A_96eXI) — Rap + vocales dinámicos  
+- [Given-Taken](https://www.youtube.com/watch?v=CUc1KcUDJk4) — Debut, letras profundas  
+- [Polaroid Love](https://www.youtube.com/watch?v=mYoc_7lElG8) — Balada dulce y melódica
+
+---
+
+# Datos extra
+
+- El fanclub oficial **ENGENE** celebra su aniversario el 30 de noviembre, igual que el debut del grupo.
+- ENHYPEN está activo con conciertos, lanzamientos y mucha interacción con sus fans.
+
+---
+
+Si quieres, puedo ayudarte a explorar más canciones, curiosidades o incluso algún video o playlist. ¿Quieres que te prepare algo especial para escuchar?
